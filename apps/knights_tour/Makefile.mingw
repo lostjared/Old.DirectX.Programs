@@ -1,0 +1,10 @@
+CC=i586-mingw32msvc-g++
+CXXFLAGS=-I/usr/local/i586-mingw32/include
+LDFLAGS= -L/usr/local/i586-mingw32/lib -mwindows -lddraw -ldinput -ldsound -ldxguid -luser32 -lgdi32 -lwsock32 -lwinmm
+FILES=MasterMain.cpp masterx.cpp
+
+all:
+	$(CC) $(CXXFLAGS) $(FILES) -o KnightsTour.exe $(LDFLAGS) 
+
+clean:
+	rm -rf *~ *.o

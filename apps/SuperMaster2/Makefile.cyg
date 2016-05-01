@@ -1,0 +1,16 @@
+CC=g++
+RES=windres
+
+
+CFLAGS= -I/usr/local/include
+LDFLAGS= -L/usr/local/lib -mno-cygwin -mwindows -lddraw -ldinput -ldsound -ldxguid -luser32 -lgdi32 -lwsock32 -lwinmm
+
+FLIST= MasterMain.cpp Masterx.cpp
+
+
+all:
+	$(RES) Script1.rc -o rez.o 
+	$(CC) $(CFLAGS) $(FLIST) rez.o $(LDFLAGS)  -o SuperMaster2/SuperMaster2.exe
+clean:
+	rm -rf *.o *~
+ 

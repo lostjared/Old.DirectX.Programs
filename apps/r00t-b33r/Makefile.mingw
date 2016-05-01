@@ -1,0 +1,16 @@
+ 
+
+CC=i586-mingw32msvc-g++
+
+CFLAGS= -I/usr/local/i586-mingw32/include
+LDFLAGS= -L/usr/local/i586-mingw32/lib -mwindows -lddraw -ldinput -ldsound -ldxguid -luser32 -lgdi32 -lwsock32 -lwinmm
+
+FLIST= mastermain.cpp game.cpp intro.cpp klosed.cpp Masterx.cpp
+LIBS=mastermain.o game.o intro.o klosed.o  Masterx.o rez.o 
+
+
+all:
+	$(CC) $(CFLAGS) $(FLIST) -c
+	$(CC) $(LIBS)  $(LDFLAGS)  -o r00t-b33r.exe
+clean:
+	rm -rf *.o *~ 

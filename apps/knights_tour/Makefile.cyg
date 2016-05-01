@@ -1,0 +1,13 @@
+
+
+
+CC=g++
+CXXFLAGS= -I/usr/local/include
+LDFLAGS= -L/usr/local/lib -mno-cygwin -mwindows -lddraw -ldinput -ldsound -ldxguid -luser32 -lgdi32 -lwsock32 -lwinmm
+FILES=MasterMain.cpp masterx.cpp
+
+all:
+	$(CC) $(CXXFLAGS) $(FILES) -o KnightsTour.exe $(LDFLAGS)
+
+clean:
+	rm -rf *.o *~

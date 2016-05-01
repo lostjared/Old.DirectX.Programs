@@ -1,0 +1,22 @@
+# this Makefile is designed for mingw32 for ubuntu linux
+# change variables according to your cross compiler
+# or if your using cygwin
+
+
+CC=i586-mingw32msvc-g++
+RES=i586-mingw32msvc-windres
+
+
+CFLAGS= -I/usr/local/i586-mingw32/include
+LDFLAGS= -L/usr/local/i586-mingw32/lib -mwindows -lddraw -ldinput -ldsound -ldxguid -luser32 -lgdi32 -lwsock32 -lwinmm
+
+FLIST= MasterMain.cpp Masterx.cpp
+LIBS=MasterMain.o rez.o Masterx.o
+
+
+all:
+	$(RES) Script1.rc -o rez.o 
+	$(CC) $(CFLAGS) $(FLIST) -c
+	$(CC) $(LIBS)  $(LDFLAGS)  -o SuperMaster2/SuperMaster2.exe
+clean:
+	rm -rf *.o *~

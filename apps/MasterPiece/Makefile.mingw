@@ -1,0 +1,17 @@
+CC=i586-mingw32msvc-g++
+RES=i586-mingw32msvc-windres
+
+CFLAGS= -I/usr/local/i586-mingw32/include
+LDFLAGS= -L/usr/local/i586-mingw32/lib  -mwindows -lddraw -ldinput -ldsound -ldxguid -luser32 -lgdi32 -lwsock32 -lwinmm
+
+FLIST= MasterMain.cpp Masterx.cpp game.cpp start.cpp intro.cpp scores.cpp
+LIBLIST=MasterMain.o Masterx.o game.o start.o intro.o scores.o rez.o
+
+
+
+all:
+	$(RES) mp.rc -o rez.o	
+	$(CC) $(CFLAGS) $(FLIST) -c
+	$(CC) $(LIBLIST) $(LDFLAGS) -o mp2000.exe
+clean:
+	rm -rf *.o *~

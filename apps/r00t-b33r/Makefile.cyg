@@ -1,0 +1,18 @@
+ 
+
+CC=g++
+RES=windres
+CFLAGS= -I/usr/local/include
+LDFLAGS= -L/usr/local/lib -mno-cygwin -mwindows -lddraw -ldinput -ldsound -ldxguid -luser32 -lgdi32 -lwsock32 -lwinmm
+
+FLIST= mastermain.cpp game.cpp intro.cpp klosed.cpp Masterx.cpp
+
+ 
+
+
+all:
+	$(RES) Script1.rc -o rez.o
+	$(CC) $(CFLAGS) $(FLIST) rez.o $(LDFLAGS) -o r00t-b33r.exe
+clean:
+	rm -rf *.o *~ 
+ 
