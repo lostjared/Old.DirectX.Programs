@@ -1,7 +1,3 @@
-This repo contains older directx programs and
-the libs required to compile them with mingw32
-Read the README's in the app and lib folder for
-information on how to setup and compile depending
-on your OS and compiler.
+# Old DirectX Projects
 
-
+This repository houses legacy DirectX programs along with the necessary libraries for compiling them using mingw32. For instructions on setting up and compiling based on your operating system and compiler, please consult the README files located in both the app and lib folders.
